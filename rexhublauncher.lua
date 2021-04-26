@@ -203,8 +203,12 @@ if game.PlaceId == 2041312716 then
     end)
 
     --player
-    local Player = Window:NewTab("Player")
-    local PlayerSection = Player:NewSection("Player cheats")
+    local Trolling = Window:NewTab("Trolling")
+    local TrollingSection = Trolling:NewSection("Trolling")
+
+    TrollingSection:NewTextBox("Kill player", "Kills the player (Wait for it to fix)", function(txt)
+        loadstring(game:HttpGet("https://pastebin.com/raw/iHMQZGnP"))()
+    end)
 end
 if game.PlaceId == 5847495283 then
     game.StarterGui:SetCore("SendNotification", {
@@ -256,4 +260,25 @@ if game.PlaceId == 2377868063 then
     MainSection:NewKeybind("Test Keybind", "This just a test.", Enum.KeyCode.F, function()
         warn("gay")
     end)    
+end
+
+if game.PlaceId == 185655149 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rex Hub - Bloxburg", "BloodTheme")
+
+    local Autofarm = Window:NewTab("Autofarm")
+    local AutofarmSection = Autofarm:NewSection("Autofarm")
+
+    AutofarmSection:NewToggle("Autofarm", "Autofarms all of the work places.", function(state)
+        if state then
+            loadstring(game:HttpGet("https://pastebin.com/raw/GXAVZY4h"))()
+        else
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Rex Hub";
+                Text = "Disabled autofarm.";
+                Icon = "http://www.roblox.com/asset/?id=6706617824";
+                Duration = 10;
+            })
+        end
+    end)
 end    
